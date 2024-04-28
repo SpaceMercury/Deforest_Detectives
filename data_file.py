@@ -1,12 +1,26 @@
 import matplotlib.pyplot as plt
 from torchvision.io import read_image
+from skimage import io, transform
 from torchvision.transforms import Compose, Resize, ToTensor
 from torch.utils.data import DataLoader, Dataset
-import os
+from skimage import io, transform
+import numpy as np
 from torch.utils.data import Dataset
-from torchvision.transforms import Compose, Resize, ToTensor
+import os
+import torch
+from torchvision.transforms import Resize, ToTensor, Normalize, Compose
 
-from torchvision.transforms.functional import to_pil_image, to_tensor, rgb_to_grayscale
+
+label_colors = {
+    'urban_land': (0, 255, 255),
+    'agriculture_land': (255, 255, 0),
+    'rangeland': (255, 0, 255),
+    'forest_land': (0, 255, 0),
+    'water': (0, 0, 255),
+    'barren_land': (255, 255, 255),
+    'unknown': (0, 0, 0)
+}
+
 
 class ImageMaskDataset(Dataset):
     def __init__(self, image_dir, mask_dir, transform=None, mask_transform=None):
@@ -31,21 +45,22 @@ class ImageMaskDataset(Dataset):
         img_path = os.path.join(self.image_dir, img_name)
         mask_path = os.path.join(self.mask_dir, mask_name)
 
-        image = read_image(img_path)
-        mask = read_image(mask_path)
+        image = io.imread(img_path)
+        mask = io.imread(mask_path)
 
         if self.transform:
-            print(f"Type before transform: {image.dtype}, {image.shape}")
             image = self.transform(image)
-            print(f"Type after transform: {image.dtype}, {image.shape}")
         if self.mask_transform:
             mask = self.mask_transform(mask)
 
         return image, mask
 
 
+"""""""""""
+# Define transformations
 transform = Compose([
-    Resize((256, 256)),
+    ToTensor(),  # Converts numpy array to tensor
+    Resize((256, 256))  # Resize the tensor
 ])
 
 # Dataset and DataLoader
@@ -54,6 +69,7 @@ mask_directory = '/Users/polfuentes/TUM_Makeathon/archive/train3/masks'
 
 dataset = ImageMaskDataset(image_directory, mask_directory, transform=transform, mask_transform=transform)
 dataloader = DataLoader(dataset, batch_size=1, shuffle=True)
+
 
 
 def show_images(images, masks, num_images=3):
@@ -85,3 +101,6 @@ for image, mask in dataloader:
     if len(images) == 3:
         break
 
+
+#show_images(images, masks, num_images=3)
+"""""
