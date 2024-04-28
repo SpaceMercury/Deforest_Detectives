@@ -34,4 +34,8 @@ To install the required dependencies, you can run the following command:
 `pip install -r requirements.txt`
 This will install all the necessary packages required to run the project. It can take a little bit, don't worry, it's normal.
 
+### Running
+
+Once you have everything installed run the `mainfile.py` file in your terminal or code editor to execute the model.
+
 ## Future
