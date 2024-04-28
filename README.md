@@ -1,10 +1,10 @@
-# Deforest Detectives
+# Deforest Detectives - OnlyForests
 
 Welcome to the repository for the "Deforest Detectives" project, developed during the TUM Makeathon. Our mission is to leverage advanced machine learning techniques to identify and monitor deforestation activities.
 
 ## Project Overview
 
-Deforestation is a critical environmental issue that leads to biodiversity loss, climate change, and disrupted ecosystems. Early and accurate detection of deforestation can help in taking timely action. Our project aims to address this challenge by applying a ResNet model on satellite data to detect signs of deforestation.
+Deforestation is a critical environmental issue that leads to biodiversity loss, climate change, and disrupted ecosystems. Early and accurate detection of deforestation can help in taking timely action. Our project aims to address this challenge by applying a ResNet model on satellite data to detect signs of deforestation. Thanks to that detection we will calculate a "vulnerability" or "risk" score associated with a piece of land.
 
 ## Methodology
 
@@ -13,10 +13,6 @@ We used a Residual Neural Network (ResNet), a type of convolutional neural netwo
 ## Data
 
 The dataset consists of high-resolution satellite images that have been labeled for areas of deforestation. The images being all standaradized and being taken from consistent sources, the model is able to learn the patterns of deforestation and make accurate predictions. We reduced the size to 256 to reduce the computational cost and speed up the process.
-
-## Model Training
-
-We trained our ResNet model on a robust dataset of labeled satellite images. The model was fine-tuned to identify deforested regions with high accuracy, ensuring it learned the complex patterns and characteristics unique to deforested landscapes.
 
 ## Results
 
