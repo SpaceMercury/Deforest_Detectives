@@ -8,11 +8,13 @@ Deforestation is a critical environmental issue that leads to biodiversity loss,
 
 ## Methodology
 
-We used a Residual Neural Network (ResNet), a type of convolutional neural network that is highly effective in image recognition tasks, to analyze satellite imagery and identify deforested areas. Our choice of ResNet is motivated by its ability to handle very deep networks through skip connections and residual learning.
+We used a Residual Neural Network (ResNet), a type of convolutional neural network that is highly effective in image recognition tasks, to analyze satellite imagery and identify deforested areas. Our choice of ResNet is motivated by its ability to handle very deep networks through skip connections and residual learning. It's a very powerful model that can learn complex patterns in images and make accurate predictions, and can be easily applied with PyTorch.
 
 ## Data
 
 The dataset consists of high-resolution satellite images that have been labeled for areas of deforestation. The images being all standaradized and being taken from consistent sources, the model is able to learn the patterns of deforestation and make accurate predictions. We reduced the size to 256 to reduce the computational cost and speed up the process.
+IMPORTANT: The dataset is not included in this repository, you need to download it and place it in the data folder.
+The dataset is too large to be uploaded to this repository, but you can find it [here](https://www.kaggle.com/datasets/balraj98/deepglobe-land-cover-classification-dataset).
 
 ## Results
 
