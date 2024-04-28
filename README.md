@@ -8,7 +8,7 @@ Deforestation is a critical environmental issue that leads to biodiversity loss,
 
 ## Methodology
 
-We used a Residual Neural Network (ResNet), a type of convolutional neural network that is highly effective in image recognition tasks, to analyze satellite imagery and identify deforested areas. Our choice of ResNet is motivated by its ability to handle very deep networks through skip connections and residual learning. It's a very powerful model that can learn complex patterns in images and make accurate predictions, and can be easily applied with PyTorch.
+Initially we used a Residual Neural Network (ResNet), a type of convolutional neural network that is highly effective in image recognition tasks, to analyze satellite imagery and identify deforested areas. But after tinkering and testing we achieved better results with UNET, which is the technology that will be used in the app. We chose the U-Net architecture for our project because of its proven effectiveness in the field of image segmentation.
 
 ## Data
 
@@ -18,11 +18,12 @@ The dataset is too large to be uploaded to this repository, but you can find it 
 
 ## Results
 
-The trained ResNet model demonstrated promising results in detecting deforestation. The model's predictions were validated against ground-truth data, showing a high level of precision and recall.
+The trained ResNet model demonstrated promising results in detecting deforestation. Unet achieved better results and is the final part of the demo.
 
 ## Technologies Used
 
-- PyTorch for implementing and training the ResNet model
+- PyTorch for implementing the ResNet model
+- PyTorch for implementing Unet
 - Python for data processing and model development
 - Matplotlib and OpenCV for image visualization and augmentation
 
